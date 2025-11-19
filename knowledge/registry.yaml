@@ -1,49 +1,72 @@
-﻿version: 1
+version: 2
 description: >
-  Index logique de la connaissance Parlios. Les fichiers réels peuvent vivre dans
+  Index logique de la connaissance Parlios. Les fichiers r?els peuvent vivre dans
   ce repo, dans d'autres repos GitHub, ou dans un stockage externe. Ce registre
-  donne aux agents une vue structurée de "où chercher quoi".
+  donne aux agents une vue structur?e de "o? chercher quoi" et rappelle que la
+  connaissance n'est pas limit?e aux outils IA : elle couvre la vie, les projets,
+  le business, la p?dagogie, la psychologie, la strat?gie, etc.
 
 categories:
   - id: prompts_gold
     label: "Prompts Gold"
-    description: "Prompts et patterns considérés comme stables et très utiles."
+    description: "Prompts et patterns consid?r?s comme stables et tr?s utiles."
   - id: strategies
-    label: "Stratégies & Frameworks"
-    description: "Méthodes générales (Meta-planning, multi-agents, RAG, etc.)."
+    label: "Strat?gies & Frameworks"
+    description: "M?thodes g?n?rales (meta-planning, multi-agents, RAG, business, apprentissage)."
   - id: playbooks
     label: "Playbooks"
-    description: "Procédures pratiques étape par étape."
+    description: "Proc?dures pratiques ?tape par ?tape (technique, business, organisation, contenu)."
   - id: patterns
-    label: "Patterns techniques"
-    description: "Structures de code, architectures, organisation de repos."
+    label: "Patterns techniques & syst?mes"
+    description: "Structures de code, architectures, organisation de repos, patterns d'automatisation."
+  - id: mindset
+    label: "Mindset & Psychologie"
+    description: "Mantras, attitudes, mani?res de penser, gestion de l'?nergie, du focus, de la motivation."
   - id: logs
-    label: "Logs & Retours d'expérience"
-    description: "Logs, post-mortems, lessons learned."
+    label: "Logs & Retours d'exp?rience"
+    description: "Logs, post-mortems, lessons learned, exp?rimentations."
 
 resources:
-  - id: ua_knowledge_snapshot
+  - id: ua_knowledge_prompts
     category: prompts_gold
     source_type: github
     location: "Minot-Prod/UA-KNOWLEDGE"
     notes:
-      - "Importer progressivement ici les prompts gold et patterns confirmés."
+      - "Prompts gold, patterns de conversation, frameworks d'analyse."
+      - "? utiliser pour tout type de situation humaine ou technique."
 
-  - id: parlioS_engine_docs
+  - id: ua_core_systems
+    category: patterns
+    source_type: github
+    location: "Minot-Prod/UA_CORE"
+    notes:
+      - "Structures d'agents, orchestration, r?gles de gouvernance UA."
+      - "? r?utiliser pour concevoir de nouveaux syst?mes multi-agents."
+
+  - id: ua_runtime
+    category: patterns
+    source_type: github
+    location: "Minot-Prod/UA"
+    notes:
+      - "Impl?mentations concr?tes, runtime UA, int?grations aux outils existants."
+
+  - id: parlios_engine
     category: strategies
     source_type: github
     location: "iamaximegrauliere-cmyk/Parlios-Engine"
     notes:
-      - "Archi agents, orchestrations, patterns avancés."
+      - "Vision Parlios, Hub, agents, gestion du temps, scoring de t?ches, productivit? augment?e."
 
-  - id: docs_zip_ingested
+  - id: lab_docs_zip_ingested
     category: playbooks
     source_type: local
     location: "./INGESTED_FROM_ZIP"
     notes:
-      - "Résultat de l'ingestion du ZIP initial (docs, specs, idées)."
+      - "R?sultat de l'ingestion du ZIP initial (docs, specs, id?es, syst?mes IA)."
+      - "Contient des id?es avanc?es sur des IA sommit?s, des ?quipes d'agents, des comptes gold, etc."
 
 guidelines:
-  - "Toujours citer la resource utilisée dans les réponses importantes."
-  - "En cas de contradiction entre deux sources, expliciter le conflit."
-  - "Favoriser les ressources marquées prompts_gold pour les décisions critiques."
+  - "Toujours citer au moins une resource utilis?e pour un livrable important."
+  - "Si plusieurs resources se contredisent, expliciter les diff?rences et trancher avec justification."
+  - "Ne PAS limiter l'usage de la connaissance aux outils IA : elle peut ?tre mobilis?e pour la vie, le travail, les projets, l'apprentissage."
+  - "Favoriser les resources marqu?es prompts_gold et strategies pour les d?cisions structurantes."
