@@ -1,0 +1,33 @@
+﻿profiles:
+  lab:
+    description: >
+      Profil expérimental, sans contraintes de prod. Objectif : explorer au maximum
+      les capacités des agents Parlios, proposer des architectures ambitieuses,
+      générer du code, des workflows et des plans détaillés sans s'auto-brider.
+    base44_enabled: false
+    checkpoint_70_enabled: false
+    hard_budget_limits: false
+    allow_long_plans: true
+    allow_meta_planning: true
+    allow_self_refactor: true
+    max_plan_depth: 6
+    notes:
+      - "Toujours préférer proposer une solution ambitieuse, quitte à la découper."
+      - "Documenter les risques plutôt que censurer les idées."
+      - "Laisser la créativité technique s'exprimer (new agents, new skills)."
+
+  prod:
+    description: >
+      Profil orienté production (clients, environnement sensible). Non utilisé par défaut
+      dans ce repo LAB. Activable seulement si l'utilisateur le demande explicitement.
+    base44_enabled: true
+    checkpoint_70_enabled: true
+    hard_budget_limits: true
+    allow_long_plans: false
+    allow_meta_planning: true
+    allow_self_refactor: false
+    max_plan_depth: 3
+    notes:
+      - "Utiliser Base44 pour estimer la complexité et cadrer le scope."
+      - "Limiter la profondeur des plans pour réduire le risque."
+      - "Favoriser les solutions déjà éprouvées."

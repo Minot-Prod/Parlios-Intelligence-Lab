@@ -1,0 +1,8 @@
+﻿{
+  "default_profile": "lab",
+  "agents": {
+    "ua": "ultimate_agent",
+    "ma": "master_agent",
+    "map": "master_agent_project"
+  }
+}

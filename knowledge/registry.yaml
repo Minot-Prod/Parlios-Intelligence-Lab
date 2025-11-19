@@ -1,0 +1,49 @@
+﻿version: 1
+description: >
+  Index logique de la connaissance Parlios. Les fichiers réels peuvent vivre dans
+  ce repo, dans d'autres repos GitHub, ou dans un stockage externe. Ce registre
+  donne aux agents une vue structurée de "où chercher quoi".
+
+categories:
+  - id: prompts_gold
+    label: "Prompts Gold"
+    description: "Prompts et patterns considérés comme stables et très utiles."
+  - id: strategies
+    label: "Stratégies & Frameworks"
+    description: "Méthodes générales (Meta-planning, multi-agents, RAG, etc.)."
+  - id: playbooks
+    label: "Playbooks"
+    description: "Procédures pratiques étape par étape."
+  - id: patterns
+    label: "Patterns techniques"
+    description: "Structures de code, architectures, organisation de repos."
+  - id: logs
+    label: "Logs & Retours d'expérience"
+    description: "Logs, post-mortems, lessons learned."
+
+resources:
+  - id: ua_knowledge_snapshot
+    category: prompts_gold
+    source_type: github
+    location: "Minot-Prod/UA-KNOWLEDGE"
+    notes:
+      - "Importer progressivement ici les prompts gold et patterns confirmés."
+
+  - id: parlioS_engine_docs
+    category: strategies
+    source_type: github
+    location: "iamaximegrauliere-cmyk/Parlios-Engine"
+    notes:
+      - "Archi agents, orchestrations, patterns avancés."
+
+  - id: docs_zip_ingested
+    category: playbooks
+    source_type: local
+    location: "./INGESTED_FROM_ZIP"
+    notes:
+      - "Résultat de l'ingestion du ZIP initial (docs, specs, idées)."
+
+guidelines:
+  - "Toujours citer la resource utilisée dans les réponses importantes."
+  - "En cas de contradiction entre deux sources, expliciter le conflit."
+  - "Favoriser les ressources marquées prompts_gold pour les décisions critiques."

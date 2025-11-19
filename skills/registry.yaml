@@ -1,0 +1,79 @@
+﻿version: 1
+description: >
+  Registre des capacités (skills) que les agents peuvent utiliser. Ce fichier
+  ne contient pas de code, uniquement des définitions conceptuelles alignées
+  avec les outils que tu utilises déjà.
+
+skills:
+
+  - id: github_repo_intel
+    provider: github
+    description: "Analyser la structure d'un repo GitHub et en déduire les patterns principaux."
+    inputs:
+      - name: repo_url
+        type: string
+    outputs:
+      - name: repo_map
+        type: json
+        description: "Dossiers, fichiers clés, technologies, scripts."
+    notes:
+      - "Peut être implémenté via une API GitHub ou un workflow n8n existant."
+
+  - id: n8n_workflow_designer
+    provider: n8n
+    description: "Décrire un workflow n8n à partir d'un besoin métier."
+    inputs:
+      - name: business_goal
+        type: string
+      - name: trigger_type
+        type: string
+        optional: true
+    outputs:
+      - name: workflow_spec
+        type: json
+        description: "Structure d'un workflow (nodes, connections, I/O)."
+    notes:
+      - "La spec peut ensuite être traduite en vrai workflow dans l'UI n8n."
+
+  - id: supabase_schema_designer
+    provider: supabase
+    description: "Proposer un schéma minimal Supabase (tables, colonnes) pour un nouveau module."
+    inputs:
+      - name: module_goal
+        type: string
+    outputs:
+      - name: schema_sql
+        type: string
+        description: "SQL de création de tables (PostgreSQL)."
+
+  - id: netlify_function_planner
+    provider: netlify
+    description: "Concevoir des endpoints Netlify Functions pour exposer des fonctionnalités."
+    inputs:
+      - name: api_goal
+        type: string
+    outputs:
+      - name: functions_plan
+        type: json
+        description: "Liste d'endpoints, méthodes, inputs/outputs."
+
+  - id: http_fetcher
+    provider: http
+    description: "Effectuer des requêtes GET simples sur des APIs publiques."
+    inputs:
+      - name: url
+        type: string
+    outputs:
+      - name: response_body
+        type: string
+
+  - id: local_knowledge_mapper
+    provider: internal
+    description: "Mapper un ensemble de fichiers (docs, md, txt) vers des catégories de knowledge."
+    inputs:
+      - name: file_list
+        type: list<string>
+    outputs:
+      - name: knowledge_map
+        type: json
+        description: "Mapping fichier -> catégories (playbooks, prompts, patterns, etc.)."

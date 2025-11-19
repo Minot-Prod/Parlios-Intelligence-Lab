@@ -1,0 +1,29 @@
+﻿id: default_scorecard
+description: >
+  Scorecard générique pour évaluer la qualité des runs Parlios Intelligence Lab.
+
+dimensions:
+  - id: correctness
+    label: "Correction"
+    description: "La solution proposée est-elle techniquement correcte et cohérente ?"
+    scale: 1-5
+
+  - id: usefulness
+    label: "Utilité"
+    description: "Le livrable est-il réellement exploitable (code, workflow, spec) ?"
+    scale: 1-5
+
+  - id: ambition
+    label: "Ambition"
+    description: "Le système a-t-il proposé une solution ambitieuse / intéressante ?"
+    scale: 1-5
+
+  - id: clarity
+    label: "Clarté"
+    description: "La structure (plan, étapes, explications) est-elle claire ?"
+    scale: 1-5
+
+  - id: reusability
+    label: "Réutilisabilité"
+    description: "Ce qui a été produit peut-il être réutilisé pour d'autres projets ?"
+    scale: 1-5

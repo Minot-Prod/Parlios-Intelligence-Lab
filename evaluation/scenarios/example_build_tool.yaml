@@ -1,0 +1,23 @@
+﻿id: example_build_tool
+label: "Créer un nouvel outil IA Parlios"
+description: >
+  Scenario de test pour évaluer la capacité du LAB à concevoir un outil IA complet :
+  architecture, repo, workflow n8n, stockage Supabase, déploiement Netlify.
+
+prompt_user: >
+  "Je veux un nouvel outil IA Parlios qui permet d'analyser un texte et de
+  générer un plan d'action détaillé pour l'améliorer. Donne-moi :
+  - l'architecture technique complète,
+  - la structure du repo,
+  - les workflows n8n,
+  - les endpoints Netlify,
+  - le schéma Supabase minimal,
+  - et un plan de tests."
+
+expected_behaviour:
+  - "UA identifie la nature de la tâche et route vers MA + MAP."
+  - "MA propose plusieurs architectures, en choisit une."
+  - "MAP produit une structure de repo + workflows + schema SQL."
+  - "UA produit un meta_report clair + next steps."
+
+scorecard_id: default_scorecard
